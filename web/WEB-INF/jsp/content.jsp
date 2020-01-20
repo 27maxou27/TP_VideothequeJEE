@@ -4,7 +4,7 @@
 <%@ include file="/WEB-INF/fragment/head.html" %>
 
 <!-- Content -->
-<h1>Page d'accueil</h1>
+<h1>Page Test</h1>
 
 <!-- Footer -->
 <%@ include file="/WEB-INF/fragment/footer.html" %>
