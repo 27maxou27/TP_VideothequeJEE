@@ -21,6 +21,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+<<<<<<< HEAD
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -30,5 +31,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+=======
+>>>>>>> 0cb5c73f996cf1aa0dec128cb99d523a7a56a675
   </component>
 </module>

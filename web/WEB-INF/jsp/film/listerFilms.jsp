@@ -1,16 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: maximilien.dandres
-  Date: 27/01/2020
-  Time: 09:49
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="classe.Movie" %>
+<%@ page import="java.util.List" %>
+<%!
+    List<Movie> films;
+%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+
+<!-- Header -->
+<%@ include file="/WEB-INF/fragment/head.html" %>
+
+<%
+    films = (List<Movie>)request.getAttribute("liste");
+%>
+
+<!-- Content -->
+<h1>Liste des films</h1>
+
+<!-- Footer -->
+<%@ include file="/WEB-INF/fragment/footer.html" %>
 
 </body>
 </html>
