@@ -22,3 +22,6 @@
 
 <!-- Footer -->
 <%@ include file="/WEB-INF/fragment/footer.html" %>
+
+</body>
+</html>
