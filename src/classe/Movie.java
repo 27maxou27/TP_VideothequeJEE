@@ -1,12 +1,5 @@
 package classe;
 
-enum MediaSupport {
-    K7,
-    USB,
-    BLUERAY,
-    DVD,
-}
-
 public class Movie {
     private String Title;
 
@@ -31,6 +24,6 @@ public class Movie {
         System.out.printf("Titre: %s", Title);
         System.out.printf("Acteur principal: %s", Actor);
         System.out.printf("Réalisateur: %s", Realisator);
-        System.out.printf("Année: %i\tSupport: %s", Year, Media.name());
+        System.out.printf("Année: %i\tSupport: %s", Year, Media.Nom);
     }
 }

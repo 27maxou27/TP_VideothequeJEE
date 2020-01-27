@@ -12,16 +12,7 @@ public class Store {
     private List<Movie> Movies;
 
     public Store() {
-        Scanner = new Scanner(System.in);
-        Users = new ArrayList<User>() {{
-            add(new User("admin", "admin", "admin@admin.com", null));
-            add(new User("Max", "Dandres", "max.dandres@epsi.fr"));
-        }};
-        Movies = new ArrayList<Movie>() {{
-            add(new Movie("Matrix", "Keanu Reeves", "P. & L. Wachowski", 1999, MediaSupport.DVD));
-            add(new Movie("Matrix: Reloaded", "Keanu Reeves", "P. & L. Wachowski", 2003, MediaSupport.BLUERAY));
-            add(new Movie("Matrix: Revolution", "Keanu Reeves", "P. & L. Wachowski", 2003, MediaSupport.USB));
-        }};
+
     }
 
     public int MainMenu() {
