@@ -14,7 +14,9 @@ public class ConnexionDB {
     String path = "/WEB-INF/jsp/content.jsp";
 
 
-    protected Connection doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    public static Connection OpenConnection(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        String path = "/WEB-INF/jsp/content.jsp";
+
         RequestDispatcher rd = request.getRequestDispatcher(path);
         rd.forward(request, response);
         Connection conn = null;
