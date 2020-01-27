@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
+
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-=======
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/web/WEB-INF/jsp/film/listeFilms.jsp" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="13.0.1" project-jdk-type="JavaSDK">
->>>>>>> 72518ffa728d16e0aff87314f744e5c21109698f
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+
 </project>
