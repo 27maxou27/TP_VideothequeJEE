@@ -1,14 +1,13 @@
 package servlet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.IOException;
+import java.sql.*;
 import java.util.List;
 
 import ServiceDB.ConnexionDB;
@@ -19,21 +18,61 @@ public class ListFilmServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException {
 
+
+
+
+
+
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nom = request.getParameter("nom");
+        String annee = request.getParameter("annee");
+        String real = request.getParameter("realisateur");
+        String acteur = request.getParameter("acteur");
+        String support = request.getParameter("support");
 
         Connection conn = ConnexionDB.OpenConnection(request,response);
-        Statement stmt = null;
+        PreparedStatement stmt = null;
         try {
-            stmt = conn.createStatement();
+            stmt = (PreparedStatement) conn.createStatement();
             String GetListFilm;
             GetListFilm = "SELECT nom,acteur_principal,realisateur,type_support,annee_sortie FROM film,support where film.support_id = support.support_id";
+            if (nom != null && nom != ""){
+                GetListFilm = GetListFilm + "and nom = ?";
+                stmt.setString(1,nom);
+            }
+            if (annee != null && annee != ""){
+                GetListFilm = GetListFilm + "and annee_sortie = ?";
+                stmt.setInt(1,Integer.valueOf(annee));
+
+                    }
+            if (real != null && real != ""){
+                GetListFilm = GetListFilm + "and realisateur = ?";
+                stmt.setString(1,real);
+
+                        }
+            if (acteur != null && acteur != ""){
+                GetListFilm = GetListFilm + "and acteur_principal = ?";
+                stmt.setString(1,acteur);
+
+                            }
+            if (support != null && support != "" ){
+                GetListFilm = GetListFilm + "and type_support = ?";
+                stmt.setString(1,support);
+
+
+            }
             ResultSet rs = stmt.executeQuery(GetListFilm);
-            request.setAttribute("liste",rs);
+            List<Movie> ListeFilm = ListFilm(rs);
+            request.setAttribute("listeFilm",ListeFilm);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        String path = "/WEB-INF/jsp/film/listerFilms.jsp";
+        RequestDispatcher rd = request.getRequestDispatcher(path);
+        rd.forward(request, response);
+
     }
 
     public List<Movie> ListFilm (ResultSet rs){
@@ -55,5 +94,5 @@ public class ListFilmServlet extends HttpServlet {
             }
         return LstMv;
        }
-    }
+
 }

@@ -9,19 +9,23 @@ public class User {
 
     private String Email;
 
+    private int FilmLoue;
+
     private List<Movie> Movies;
 
-    public User(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email,int filmLoue) {
         FirstName = firstName;
         LastName = lastName;
         Email = email;
+        FilmLoue = filmLoue;
         Movies = null;
     }
 
-    public User(String firstName, String lastName, String email, List<Movie> movies) {
+    public User(String firstName, String lastName, String email, List<Movie> movies,int filmLoue) {
         FirstName = firstName;
         LastName = lastName;
         Email = email;
+        FilmLoue = filmLoue;
         Movies = movies;
     }
 }
