@@ -6,7 +6,7 @@
 <!-- Content -->
 <h1>Ajouter un membre</h1>
 
-<form>
+<form method="post" action="/AjoutMembreServlet">
 
     <div class="form-group">
         <label for="txt_nom">Nom</label>
@@ -24,6 +24,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Enregistrer</button>
+
 </form>
 
 <!-- Footer -->

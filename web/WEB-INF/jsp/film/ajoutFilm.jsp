@@ -1,4 +1,5 @@
 <%@ page import="classe.MediaSupport" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%!
     List<MediaSupport> supports;
@@ -10,33 +11,45 @@
 <!-- Content -->
 <h1>Ajouter un film</h1>
 
-<form method="post">
+<form method="post" action="/AjoutFilmServlet">
 
     <div class="form-group">
-        <label for="txt_nom">Nom</label>
-        <input type="text" class="form-control" id="txt_nom" placeholder="Saisir le nom du film">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="Saisir le nom du film">
     </div>
 
     <div class="form-group">
-        <label for="txt_acteur">Acteur principal</label>
-        <input type="text" class="form-control" id="txt_acteur" placeholder="Saisir l'acteur principal">
+        <label for="acteur">Acteur principal</label>
+        <input type="text" class="form-control" id="acteur" placeholder="Saisir l'acteur principal">
     </div>
 
     <div class="form-group">
-        <label for="txt_annee">Année de sortie</label>
-        <input type="number" class="form-control" id="txt_annee" placeholder="Saisir l'année de sortie">
+        <label for="annee">Année de sortie</label>
+        <input type="number" class="form-control" id="annee" placeholder="Saisir l'année de sortie">
     </div>
 
     <div class="form-group">
-        <label for="txt_realisateur">Réalisateur</label>
-        <input type="text" class="form-control" id="txt_realisateur" placeholder="Saisir le réalisateur">
+        <label for="realisateur">Réalisateur</label>
+        <input type="text" class="form-control" id="realisateur" placeholder="Saisir le réalisateur">
     </div>
 
     <div class="form-group">
-            <label for="ddl_support">State</label>
-            <select id="ddl_support" class="form-control">
-                <option selected>-- Choisir support --</option>
-            </select>
+            <label for="support">Support</label>
+<%
+    supports = (List<MediaSupport>)request.getAttribute("supports");
+    if (supports != null) {
+%>
+        <select id="support" class="form-control">
+            <option value="">-- Choisir --</option>
+        <% for (MediaSupport support : supports) { %>
+            <option value="<%= support.Id %>"><%= support.Nom %></option>
+        <% } %>
+        </select>
+        <% } else { %>
+        <select id="ddl_support" class="form-control">
+            <option value="">Erreur</option>
+        </select>
+        <% } %>
     </div>
 
     <button type="submit" class="btn btn-primary">Enregistrer</button>

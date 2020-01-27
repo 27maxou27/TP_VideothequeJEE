@@ -4,9 +4,8 @@
 <%@ include file="/WEB-INF/fragment/head.html" %>
 
 <!-- Content -->
-<h1>Page d'accueil</h1>
-
 <div class="container">
+    <h1>Page d'accueil</h1>
 
     <div class="row">
         <div class="col">

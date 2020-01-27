@@ -9,9 +9,9 @@ public class Movie {
 
     private int Year;
 
-    private MediaSupport Media;
+    private String Media;
 
-    public Movie(String title, String actor, String realisator, int year, MediaSupport media) {
+    public Movie(String title, String actor, String realisator, int year, String media) {
         Title = title;
         Actor = actor;
         Realisator = realisator;
@@ -24,6 +24,6 @@ public class Movie {
         System.out.printf("Titre: %s", Title);
         System.out.printf("Acteur principal: %s", Actor);
         System.out.printf("Réalisateur: %s", Realisator);
-        System.out.printf("Année: %i\tSupport: %s", Year, Media.Nom);
+        System.out.printf("Année: %i\tSupport: %s", Year, Media);
     }
 }
